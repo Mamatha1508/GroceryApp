@@ -1,0 +1,28 @@
+{
+  "name": "groceryapp",
+  "version": "1.0.0",
+  "description": "- index.html file has the root element under which React runs",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "build parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mamatha1508/GroceryApp.git"
+  },
+  "author": "Mamatha Yarramsetti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mamatha1508/GroceryApp/issues"
+  },
+  "homepage": "https://github.com/Mamatha1508/GroceryApp#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
