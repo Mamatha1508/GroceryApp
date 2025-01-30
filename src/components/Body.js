@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react'
 //import {homePageDataObj} from '../utils/constants';
 import CategoryCard from './CategoryCard';
 import IndividualCategoryItems from './IndividualCategoryItems';
-
+import Shimmer from './Shimmer';
 
 const Body=()=>{
     //console.log('home page',homePageDataObj)
     const [listOfDiaryItems,setListOfDiaryItems]=useState([]);
-    const [listOfCategory,setListOfCategory]=useState({})
-    console.log('list of diary',listOfDiaryItems);
+    const [listOfCategory,setListOfCategory]=useState({});
+    const [searchInput,setSearchInput]=useState('');
+    //console.log('list of diary',listOfDiaryItems);
+    let counter=0;
+    let timer;
     const fetchData= async ()=>{
 
         const data= await fetch('http://localhost:3000/homepage/data');
@@ -25,19 +28,55 @@ const Body=()=>{
         fetchData();
         
     },[])
-   return (
+   return ( listOfDiaryItems.length===0  ? <Shimmer/>  : (
     <div>
         <div>
+        
+            <input type='text' placeholder='serach items' className="body-input" onChange={(e)=>{
+                // Added debouncing logic to reduce no.of state  updates
+                   
+                   function doSomeMagic(func, wait) {
+                    // your code here
+                    //let timer;
+                  //  clearTimeout(timer)
+                  console.log('timer',timer);
+                    return function (){
+                        console.log('returning fn timer',timer)
+                        clearTimeout(timer);
+                      timer=setTimeout(()=>{
+                        console.log('in timeout',timer)
+                      func();
+                    },wait)
+                    }
+                    
+                    
+                  }
+                    function searchFn()
+                    {
+                        console.log('saerch fn called')
+                        console.log('target value',e.target.value,counter++)
+                        setSearchInput(e.target.value);
+                    }
+                    let debouncedFn= doSomeMagic(searchFn,1000)
+                    debouncedFn();
+            }}/>
+            
             <button onClick={()=>{
-               // console.log(homePageDataObj);
+              
+               const inp= document.querySelector(".body-input").value;
+               setSearchInput(inp)
+               
                 const filteredDiaryItems= listOfDiaryItems?.filter((obj,index)=>{
-                   return  obj?.header_config?.title=='Dairy, Bread & Eggs';
+                    console.log('title',obj?.header_config?.title);
+                   return  obj?.header_config?.title.includes(searchInput);
                 })
-                console.log('filtered dairy',filteredDiaryItems)
+              
+               
                 setListOfDiaryItems(filteredDiaryItems)
 
             }}>Filter Diary Items</button>
         </div>
+        
          <div>
             {
          
@@ -59,7 +98,7 @@ const Body=()=>{
         </div>
     </div>
        
-    )
+    ))
 }
 
 export default Body
