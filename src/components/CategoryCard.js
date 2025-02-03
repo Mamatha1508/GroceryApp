@@ -1,19 +1,23 @@
 import React from "react";
+import { Link } from "react-router";
 
 const CategoryCard=({cardData,index})=>{
     return (
-        <div className='card-items'>
+        <div className='flex flex-wrap'>
             {
                cardData?.data?.items?.map((cardItem)=>{
-               // console.log('cardItem',cardItem,cardData,index)
+               console.log('cardItem',cardItem)
                 return (
-                    <div className="card">
+                    <Link to={'/items/'+cardItem.id} className="w-60 h-60 m-4 border">
+                    <div >
                         
-                        <img src={cardItem.image}/>
-                        <div>
+                        <img className='h-40 w-40 ml-4' src={cardItem.image}/>
+                        <div className='pl-8 w-40'> 
                         {cardItem.image_title.split('-')[1]} 
                         </div>
                         </div>
+</Link>
+                    
                 )
 
                })
