@@ -1,4 +1,4 @@
-export const homePageDataObj={
+ export const homePageDataObj={
     "pagination": null,
     "objects": [
         {
@@ -17577,4 +17577,7 @@ export const homePageDataObj={
         }
     },
     "extras": {}
-}
+};
+
+
+//module.exports = homePageDataObj

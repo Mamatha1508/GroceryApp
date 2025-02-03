@@ -1,4 +1,9 @@
-.headerContainer
+
+@import "tailwindcss";
+
+
+
+/* .headerContainer
 {
     display: flex;
     height: 120px;
@@ -95,3 +100,26 @@
     background-color: aliceblue;
     margin: 10px;
 }
+
+.itemcard-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.itemcard
+{
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.itemcard img
+{
+    height: 150px;
+    width: 200px;
+} */
