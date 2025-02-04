@@ -7,7 +7,7 @@ const Header= ()=>{
     const [loginStatus,setLoginStatus]=useState('Logout');
     const onlineStatus=useOnlineStatus();
     return (
-        <div className='flex justify-between'>
+        <div className='flex justify-between shadow-lg mb-15'>
             <div className="ml-16  mt-4 w-40 h-40">
            <Link to="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpGFeGuTlHj03t2UvM_97HNF_SHJ315rgrQ&s"/></Link> 
             </div>

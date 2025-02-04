@@ -10,13 +10,22 @@ import About from './components/About';
 import Error from './components/Error';
 import Login from './components/Login'
 import ItemList from './components/ItemList';
+import { createCategoryContext , CategoryContext } from './utils/CategoryContext';
 
 
 const AppLayout=()=>{
+
+        const categoryList= CategoryContext();
+
+
+
     return (
         <div>
             <Header/>
-            <Outlet/>
+            <createCategoryContext.Provider  value={{categoryList : categoryList}}>
+                <Outlet/>
+            </createCategoryContext.Provider>
+           
         </div>
     )
 }
