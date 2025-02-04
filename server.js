@@ -18,6 +18,7 @@ import { breakfast } from './src/utils/homePageCards.js';
 import { chocolates } from './src/utils/homePageCards.js';
 import { biscuits } from './src/utils/homePageCards.js';
 import { tea,rice,oil,sauce,meat, organic,babyCare,pharma,cleanItems,homeItems,personalItems,petCare} from './src/utils/homePageCards.js';
+import { bread } from './src/utils/diaryItems.js';
 
 
 
@@ -48,7 +49,7 @@ let homePageCleanItems=cleanItems;
 let homePageHomeItems=homeItems;
 let homePagePersonalItems=personalItems;
 let homePagePetCare=petCare;
-
+let breadCategory=bread;
 
 
 // Route to get all homepage data
@@ -133,6 +134,10 @@ app.get('/homepage/data', (req, res) => {
     res.json(homePagePetCare);
   });
 
+
+  app.get('/items/itemlist/953', (req, res) => {
+    res.json(breadCategory);
+  });
 // Route to add homepage data (POST request) 
 app.post('/homepage/data', (req, res) => {
   const newData = req.body; // Extract data sent in the request body
@@ -280,7 +285,12 @@ app.post('/items/itemlist/9058277', (req, res) => {
   });
   
 
-
+  app.post('/items/itemlist/953', (req, res) => {
+    const newData = req.body; // Extract data sent in the request body
+    newData.id = breadCategory.length + 1; // Generate a new ID
+    breadCategory.push(newData); // Add new data to the in-memory store
+    res.status(201).json(newData); // Return the added data with a status of 201 (Created)
+  });
 
 
 

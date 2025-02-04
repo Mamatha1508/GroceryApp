@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
+import { CategoryContext,createCategoryContext } from "../utils/CategoryContext";
 
 const CategoryCard=({cardData,index})=>{
+    //console.log('abc',useContext(createCategoryContext));
+  //  const {cardData}= useContext(createCategoryContext)
+   // console.log('card dummy',cardData)
+   const {categoryList}=useContext(createCategoryContext);
     return (
         <div className='flex flex-wrap'>
             {
-               cardData?.data?.items?.map((cardItem)=>{
+               categoryList?.data?.items?.map((cardItem)=>{
                console.log('cardItem',cardItem)
                 return (
-                    <Link to={'/items/'+cardItem.id} className="w-60 h-60 m-4 border">
+                    <Link to={'/items/'+cardItem.id} className="w-40 m-4 shadow-2xl">
                     <div >
                         
-                        <img className='h-40 w-40 ml-4' src={cardItem.image}/>
-                        <div className='pl-8 w-40'> 
+                        <img className=' w-40 mt-2 mr-2' src={cardItem.image}/>
+                        {/* <div className='pl-8 w-40'> 
                         {cardItem.image_title.split('-')[1]} 
-                        </div>
+                        </div> */}
                         </div>
 </Link>
                     

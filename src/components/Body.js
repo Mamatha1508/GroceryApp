@@ -1,18 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 //import {homePageDataObj} from '../utils/constants';
 import CategoryCard from './CategoryCard';
-import IndividualCategoryItems from './IndividualCategoryItems';
+import IndividualCategoryItems , {IndividualCategoryItemsWithLabel}   from './IndividualCategoryItemsList';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router';
 import useCategoryList from '../utils/useCategoryList';
+import IndividualCategoryItemsList from './IndividualCategoryItemsList';
+import {createCategoryContext } from '../utils/CategoryContext';
+
 
 const Body=()=>{
+      
    
+
     const [searchInput,setSearchInput]=useState('');
     //custom hook fetches the categories likst and  the filtered items on click of filter button
     //const [listOfCategory,listOfDiaryItems]=useCategoryList();
     const [listOfCategory,setListOfCategory]=useState({});
     const [listOfDiaryItems,setListOfDiaryItems]=useState([]);
+   
+  //  const IndividualCategoryItemsWithOffer= IndividualCategoryItemsWithLabel(IndividualCategoryItems);
      const fetchData= async ()=>{
  
          const data= await fetch('http://localhost:3000/homepage/data');
@@ -34,8 +41,8 @@ const Body=()=>{
     let timer;   // used for debouncing on serach input
 
    return ( listOfDiaryItems.length===0  ? <Shimmer/>  : (
-    <div>
-        <div>
+    <div className='w-9/12 ml-60'>
+        <div >
         
             <input type='text' placeholder='serach items' className="border" onChange={(e)=>{
                 // Added debouncing logic to reduce no.of state  updates
@@ -81,8 +88,8 @@ const Body=()=>{
         
          <div>
             {
+                   <CategoryCard  cardData={listOfCategory}/>
          
-             <CategoryCard cardData={listOfCategory} />
             
             
             }
@@ -90,7 +97,9 @@ const Body=()=>{
         <div>
             {
                 listOfDiaryItems?.map((individualCategory)=>{
-                    return  <Link><IndividualCategoryItems  individualCategory={individualCategory}/></Link>
+                    return  <Link>
+                    
+                    <IndividualCategoryItemsList  individualCategory={individualCategory}/></Link>
                 })
                
             }

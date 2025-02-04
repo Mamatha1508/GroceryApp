@@ -17,7 +17,7 @@ const useItemList=(itemId)=>{
     useEffect(()=>{
 fetchItemList();
 
-    },[])
+    },[itemId])
 
     return [itemList,leftNavSection];
 }
