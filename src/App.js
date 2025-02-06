@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client'
 import Header from './components/Header';
 import Body from './components/Body';
@@ -11,20 +11,33 @@ import Error from './components/Error';
 import Login from './components/Login'
 import ItemList from './components/ItemList';
 import { createCategoryContext , CategoryContext } from './utils/CategoryContext';
+import { AddItemsToCartContext } from './utils/AddItemsToCartContext';
+import { Provider } from 'react-redux';
+import appStore from './utils/appStore';
+import Cart from './components/Cart';
 
 
 const AppLayout=()=>{
 
-        const categoryList= CategoryContext();
+    const [btnCount,setBtnCount]=useState(0);
 
+        const categoryList= CategoryContext();
+    
 
 
     return (
         <div>
+             {/* <AddItemsToCartContext.Provider value={{btnCount : btnCount , setBtnCount : setBtnCount}}> */}
+
+             <Provider store={appStore}>
             <Header/>
-            <createCategoryContext.Provider  value={{categoryList : categoryList}}>
+            <createCategoryContext.Provider  value={{categoryList : categoryList,}}>
+               
                 <Outlet/>
+               
             </createCategoryContext.Provider>
+            {/* </AddItemsToCartContext.Provider> */}
+            </Provider>
            
         </div>
     )
@@ -46,6 +59,10 @@ const appRouter=createBrowserRouter([
             {
                 path:'/items/:itemId',
                 element:<ItemList/>
+            },
+            {
+                path :'/cart',
+                element : <Cart/>
             }
             
         ],

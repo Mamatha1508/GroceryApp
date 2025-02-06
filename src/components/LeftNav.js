@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router";
 import ItemCard from "./ItemCard";
 import useItemList from "../utils/useItemList";
-
+import { AddItemsToCartContext } from "../utils/AddItemsToCartContext";
 
 
 const LeftNav=({itemData,itemList,showItemsData,setShowItemsData,index,showOrHideData,setShowOrHideData})=>{
