@@ -6,7 +6,7 @@ import Shimmer from './Shimmer';
 import { Link } from 'react-router';
 import useCategoryList from '../utils/useCategoryList';
 import IndividualCategoryItemsList from './IndividualCategoryItemsList';
-import {createCategoryContext } from '../utils/CategoryContext';
+//import {createCategoryContext } from '../utils/CategoryContext';
 
 
 const Body=()=>{
@@ -69,7 +69,7 @@ const Body=()=>{
                     debouncedFn();
             }}/>
             
-            <button className='border' onClick={()=>{
+            <button className='border' data-testid='filterItems' onClick={()=>{
               
                const inp= document.querySelectorAll("input")[1].value;
                setSearchInput(inp)

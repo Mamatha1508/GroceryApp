@@ -14,7 +14,7 @@ const Header= ()=>{
 
       const cart= useSelector((store)=>store.cart.items)
 
-      console.log('cart',cart)
+     // console.log('cart',cart)
    // console.log()
     return (
         <div className='flex justify-between shadow-lg mb-15'>
@@ -23,20 +23,18 @@ const Header= ()=>{
             </div>
             <div>
                 <ul className="flex justify-evenly">
-                    <li className='mr-8 p-8'>{
+                    <li className='mr-8 p-8' data-testid='onlineStatus'>{
                         onlineStatus
                         }</li>
                     <li className='p-8'><Link to='/about'>About</Link></li>
                     <li className='p-8'><input className='border' placeholder="Search" type='text' onMouseEnter={(e)=>{
-                        console.log('header serach',e.target.value)
+                       
                     }}/></li>
-                    <li className='p-8'><Link to='/cart'>Cart - {cart.length}</Link></li>
+                    <li data-testid='cart' className='p-8'><Link to='/cart'>Cart - {cart.length}</Link></li>
                     <li className='p-8'>
                         <Link to='/login'>
-                        <button className='border bg-green-50 p-2' onClick={()=>{
-                            if(loginStatus=='Login')
-                            setLoginStatus('Logout')
-                           else
+                        <button className='border bg-green-50 p-2' data-testid='logout' onClick={()=>{
+                          
                            setLoginStatus('Login')
                         }}>{loginStatus}</button>
                         </Link>

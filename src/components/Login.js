@@ -5,7 +5,7 @@ const Login=()=>{
     return (
         <div>
             <h1>Login page</h1>
-            <Link to='/'><button>Login</button></Link>
+            <Link to='/'><button data-testid='login'>Login</button></Link>
         </div>
     )
 }
