@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.36% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/11</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>3/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,9 +111,7 @@
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,38 +119,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,32 +173,30 @@ const Header= ()=&gt;{
 &nbsp;
     // subscriv=bing to the store
 &nbsp;
-      const cart= useSelector(<span class="fstat-no" title="function not covered" >(s</span>tore)=&gt;<span class="cstat-no" title="statement not covered" >store.cart.items)</span>
+      const cart= useSelector((store)=&gt;store.cart.items)
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      console.log('cart',cart)</span>
+     // console.log('cart',cart)
    // console.log()
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
         &lt;div className='flex justify-between shadow-lg mb-15'&gt;
             &lt;div className="ml-16  mt-4 w-40 h-40"&gt;
            &lt;Link to="/"&gt;&lt;img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTpGFeGuTlHj03t2UvM_97HNF_SHJ315rgrQ&amp;s"/&gt;&lt;/Link&gt; 
             &lt;/div&gt;
             &lt;div&gt;
                 &lt;ul className="flex justify-evenly"&gt;
-                    &lt;li className='mr-8 p-8'&gt;{
+                    &lt;li className='mr-8 p-8' data-testid='onlineStatus'&gt;{
                         onlineStatus
                         }&lt;/li&gt;
                     &lt;li className='p-8'&gt;&lt;Link to='/about'&gt;About&lt;/Link&gt;&lt;/li&gt;
                     &lt;li className='p-8'&gt;&lt;input className='border' placeholder="Search" type='text' onMouseEnter={<span class="fstat-no" title="function not covered" >(e</span>)=&gt;{
-<span class="cstat-no" title="statement not covered" >                        console.log('header serach',e.target.value)</span>
+                       
                     }}/&gt;&lt;/li&gt;
-                    &lt;li className='p-8'&gt;&lt;Link to='/cart'&gt;Cart - {cart.length}&lt;/Link&gt;&lt;/li&gt;
+                    &lt;li data-testid='cart' className='p-8'&gt;&lt;Link to='/cart'&gt;Cart - {cart.length}&lt;/Link&gt;&lt;/li&gt;
                     &lt;li className='p-8'&gt;
                         &lt;Link to='/login'&gt;
-                        &lt;button className='border bg-green-50 p-2' onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt;{
-<span class="cstat-no" title="statement not covered" >                            if(loginStatus=='Login')</span>
-<span class="cstat-no" title="statement not covered" >                            setLoginStatus('Logout')</span>
-                           else
-<span class="cstat-no" title="statement not covered" >                           setLoginStatus('Login')</span>
+                        &lt;button className='border bg-green-50 p-2' data-testid='logout' onClick={()=&gt;{
+                          
+                           setLoginStatus('Login')
                         }}&gt;{loginStatus}&lt;/button&gt;
                         &lt;/Link&gt;
                     &lt;/li&gt;
@@ -220,7 +214,7 @@ export default Header;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-06T05:42:05.408Z
+                at 2025-02-10T09:47:10.825Z
             </div>
         <script src="../prettify.js"></script>
         <script>

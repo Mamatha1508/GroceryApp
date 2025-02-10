@@ -7,6 +7,7 @@ const CategoryCard=({cardData,index})=>{
   //  const {cardData}= useContext(createCategoryContext)
    // console.log('card dummy',cardData)
    const {categoryList}=useContext(createCategoryContext);
+   console.log('category list',categoryList)
     return (
         <div className='flex flex-wrap'>
             {
