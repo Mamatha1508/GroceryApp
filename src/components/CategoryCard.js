@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { Link } from "react-router";
-import { CategoryContext,createCategoryContext } from "../utils/CategoryContext";
+import { CategoryContext,CreateCategoryContext } from "../utils/CategoryContext";
 
 const CategoryCard=({cardData,index})=>{
     //console.log('abc',useContext(createCategoryContext));
   //  const {cardData}= useContext(createCategoryContext)
    // console.log('card dummy',cardData)
-   const {categoryList}=useContext(createCategoryContext);
-   console.log('category list',categoryList)
+   const {categoryList}=useContext(CreateCategoryContext);
+  // console.log('category list',categoryList)
     return (
         <div className='flex flex-wrap'>
             {
                categoryList?.data?.items?.map((cardItem)=>{
-               console.log('cardItem',cardItem)
+             //  console.log('cardItem',cardItem)
                 return (
                     <Link to={'/items/'+cardItem.id} className="w-40 m-4 shadow-2xl">
                     <div >
@@ -22,7 +22,7 @@ const CategoryCard=({cardData,index})=>{
                         {cardItem.image_title.split('-')[1]} 
                         </div> */}
                         </div>
-</Link>
+                    </Link>
                     
                 )
 

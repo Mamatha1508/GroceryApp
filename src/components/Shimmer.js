@@ -2,7 +2,7 @@ import React from "react"
 
 const Shimmer=()=>{
     return (
-        <div className="flex flex-wrap justify-between">
+        <div className="flex flex-wrap justify-between" data-testid="shimmer-ui">
             <div className="h-60 w-60 m-4 border bg-green-50"></div>
             <div className="h-60 w-60 m-4 border bg-green-50"></div>
             <div className="h-60 w-60 m-4 border bg-green-50"></div>

@@ -3,10 +3,10 @@ import React from "react";
 
 const IndividualCategoryItem=({item})=>{
 
-    console.log('item data',item)
+    //console.log('item data',item)
     return (
        
-            <div className=" w-60 m-4 shadow-2xl">
+            <div className=" w-60 m-4 shadow-2xl" data-testid='item-list'>
                 <img className=' w-40 pl-4' src={item[0].image_url}/>
                 <div className='pl-4 w-40'>{item[0].name}</div>
 
@@ -18,7 +18,7 @@ const IndividualCategoryItem=({item})=>{
 
 export const IndividualCategoryItemWithOfferLabel=(IndividualCategoryItem)=>{
     return (props)=>{
-        console.log('props',props.item[0].offer)
+       // console.log('props',props.item[0].offer)
         return (
             <div className="relative">
                

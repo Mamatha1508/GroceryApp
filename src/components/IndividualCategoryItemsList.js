@@ -6,7 +6,7 @@ import IndividualCategoryItem , {IndividualCategoryItemWithOfferLabel}from './In
 const IndividualCategoryItemsList=({individualCategory})=>{
    // console.log('indi category',individualCategory);
     // if(individualCategory.objects!=undefined && individualCategory.objects[0].data.products!=undefined)
-     console.log('indi categ',individualCategory);
+    // console.log('indi categ',individualCategory);
     const IndividualCategoryItemWithOffer= IndividualCategoryItemWithOfferLabel(IndividualCategoryItem);
      return (
         (individualCategory.objects!=undefined &&   individualCategory.objects[0].data.products!=undefined) &&  <div className='individual-category'>
