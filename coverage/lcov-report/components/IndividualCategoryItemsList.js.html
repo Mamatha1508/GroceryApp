@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/5</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,9 +105,9 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,7 +117,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">525x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,12 +136,12 @@ import { Link } from 'react-router'
 import IndividualCategoryItem , {IndividualCategoryItemWithOfferLabel}from './IndividualCategoryItem'
 &nbsp;
 &nbsp;
-const IndividualCategoryItemsList=<span class="fstat-no" title="function not covered" >({</span>individualCategory})=&gt;{
+const IndividualCategoryItemsList=({individualCategory})=&gt;{
    // console.log('indi category',individualCategory);
     // if(individualCategory.objects!=undefined &amp;&amp; individualCategory.objects[0].data.products!=undefined)
-<span class="cstat-no" title="statement not covered" >     console.log('indi categ',individualCategory);</span>
-    const IndividualCategoryItemWithOffer= <span class="cstat-no" title="statement not covered" >IndividualCategoryItemWithOfferLabel(IndividualCategoryItem);</span>
-<span class="cstat-no" title="statement not covered" >     return (</span>
+    // console.log('indi categ',individualCategory);
+    const IndividualCategoryItemWithOffer= IndividualCategoryItemWithOfferLabel(IndividualCategoryItem);
+     return (
         (individualCategory.objects!=undefined &amp;&amp;   individualCategory.objects[0].data.products!=undefined) &amp;&amp;  &lt;div className='individual-category'&gt;
             &lt;h1 className='text-3xl mt-4 mb-4 ml-8 '&gt;{individualCategory?.header_config?.title}&lt;/h1&gt;
             &lt;Link&gt;
@@ -149,9 +149,9 @@ const IndividualCategoryItemsList=<span class="fstat-no" title="function not cov
         {
             
            
-            individualCategory.objects[0].data.products.map(<span class="fstat-no" title="function not covered" >(i</span>tem,index)=&gt;{
+            individualCategory.objects[0].data.products.map((item,index)=&gt;{
             // let item1=item[0];
-             {  <span class="cstat-no" title="statement not covered" >return (item[0].offer)==null ?  &lt;IndividualCategoryItem  item={item}/&gt; :  &lt;IndividualCategoryItemWithOffer item={item}/&gt; </span>} 
+             {  return (item[0].offer)==null ?  &lt;IndividualCategoryItem  item={item}/&gt; :  &lt;IndividualCategoryItemWithOffer item={item}/&gt; } 
          
            })
        }
@@ -172,7 +172,7 @@ export default IndividualCategoryItemsList;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-02-10T09:47:10.825Z
+                at 2025-02-11T15:01:28.303Z
             </div>
         <script src="../prettify.js"></script>
         <script>

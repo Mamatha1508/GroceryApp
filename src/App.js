@@ -10,7 +10,7 @@ import About from './components/About';
 import Error from './components/Error';
 import Login from './components/Login'
 import ItemList from './components/ItemList';
-import { createCategoryContext , CategoryContext } from './utils/CategoryContext';
+import { CreateCategoryContext , CategoryContext } from './utils/CategoryContext';
 import { AddItemsToCartContext } from './utils/AddItemsToCartContext';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore';
@@ -31,11 +31,11 @@ const AppLayout=()=>{
 
              <Provider store={appStore}>
             <Header/>
-            <createCategoryContext.Provider  value={{categoryList : categoryList,}}>
+            <CreateCategoryContext.Provider  value={{categoryList : categoryList,}}>
                
                 <Outlet/>
                
-            </createCategoryContext.Provider>
+            </CreateCategoryContext.Provider>
             {/* </AddItemsToCartContext.Provider> */}
             </Provider>
            

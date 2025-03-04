@@ -5,7 +5,7 @@ import { useParams } from "react-router";
 import useItemList from "../utils/useItemList";
 import LeftNav from "./LeftNav";
 import { Link } from "react-router";
-import { createCategoryContext } from "../utils/CategoryContext";
+import { CreateCategoryContext } from "../utils/CategoryContext";
 
 
 const ItemList=()=>{
@@ -16,7 +16,7 @@ const ItemList=()=>{
   // custom hook to fetch itemlist for each category
    // const [itemList,leftNavSection]=useItemList(itemId);
 
-     const {categoryList}=useContext(createCategoryContext)
+     const {categoryList}=useContext(CreateCategoryContext)
 
    const [itemList,setItemList]=useState([]);
    const [leftNavSection,setLeftNavSection]=useState([]);

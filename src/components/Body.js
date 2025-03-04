@@ -24,7 +24,7 @@ const Body=()=>{
  
          const data= await fetch('http://localhost:3000/homepage/data');
          const jsonData= await data.json();
-         console.log('json data',jsonData);
+         //console.log('json data',jsonData);
         setTimeout(()=>{ //setListOfDiaryItems(jsonData.objects);
          setListOfCategory(jsonData.objects[2]);
          setListOfDiaryItems(jsonData.objects);
@@ -71,8 +71,9 @@ const Body=()=>{
             
             <button className='border' data-testid='filterItems' onClick={()=>{
               
-               const inp= document.querySelectorAll("input")[1].value;
-               setSearchInput(inp)
+               const inp= document.querySelectorAll("input")[1]
+               const inputVal= inp && inp.value;
+               setSearchInput(inputVal);
                
                 const filteredDiaryItems= listOfDiaryItems?.filter((obj,index)=>{
                    // console.log('title',obj?.header_config?.title);
